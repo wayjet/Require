@@ -1,0 +1,24 @@
+[
+	{
+		"name":"jquery",
+		"version":"1.11.0",
+		"baseDir":"{version}",
+		"files": [
+			{ 
+				"include" : "{name}-{version}.js", 
+				"exclude": "" 
+			}
+		]
+	},
+	{
+		"name":"jquery",
+		"version":"2.1.0",
+		"baseDir":"{version}",
+		"files": [
+			{ 
+				"include" : "{name}-{version}.js", 
+				"exclude": "" 
+			}
+		]
+	}
+]

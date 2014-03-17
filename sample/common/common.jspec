@@ -1,0 +1,99 @@
+﻿[
+	{
+		"name":"jshashtable",
+		"version":"3.0",
+		"baseDir":"jshashtable-3.0/uncompressed",
+		"files": [{ "include" : "hashtable.js",  "exclude": null }]
+	},
+
+	{
+		"name":"jshashset",
+		"version":"3.0",
+		"baseDir":"jshashtable-3.0/uncompressed",
+		"files": [{ "include" : "hashset.js",  "exclude": null }],
+		"dependencies":{ 
+			"jshashtable" : " 3.0 " 
+		}
+	},
+
+	{
+		"name":"bgiframe",
+		"version":"3.0.1",
+		"description":"用来处理IE6下select的z-index最高无法被透明层遮罩的BUG，原理也是利用IE6下的BUG，iframe可以遮罩住select，而DIV可以遮罩iframe，这样DIV也就遮罩住了select",
+		"baseDir":"bgiframe-3.0.1",
+		"files": [{  "include" : "jquery.bgiframe.js", "exclude": null}],
+		"dependencies":{ 
+			"jquery" : " 1.2.6 ~ " 
+		}
+	},
+
+	{
+		"name":"jquery.cookie",
+		"version":"1.4.0",
+		"description" : "",
+		"baseDir":"jquery.cookie-1.4.0",
+		"files": [{ "include" : "jquery.cookie.js",  "exclude": null }],
+		"dependencies":{ 
+			"jquery" : " 1.2.6 ~ " 
+		}
+	},
+
+	{
+		"name":"jquery.form",
+		"version":"3.50.0",
+		"description":" 通过该插件，我们可以非常简单的实现表单的异步提交，并实现文件上传、进度条显示等等。",
+		"baseDir":"jquery.form-3.50.0",
+		"files": [{ "include" : "jquery.form.js",  "exclude": null }],
+		"dependencies":{ 
+			"jquery" : " 1.5.0 ~ " 
+		}
+	},
+
+	{
+		"name":"JSON",
+		"version":"2.0",
+		"description" : "序列化和反序列化json格式数据",
+		"baseDir":"JSON",
+		"files": [{ "include" : "json2.js",  "exclude": null }],
+		"dependencies":null
+	},
+
+	{
+		"name":"jquery.numberformatter",
+		"version":"1.2.4",
+		"description":"",
+		"baseDir":"jquery.numberformatter",
+		"files": [{ "include" : "jquery.numberformatter-1.2.4.js",  "exclude": null }],
+		"dependencies":{
+			"jshashtable":"3.0 ~ "
+		}
+	},
+
+	{
+		"name":"form2js",
+		"version":"2.0",
+		"description":"",
+		"baseDir":"form2js-2.0/src",
+		"files": [{ "include" : "form2js.js",  "exclude": null }],
+		"dependencies": null
+	},
+	{
+		"name":"js2form",
+		"version":"2.0",
+		"description":"",
+		"baseDir":"form2js-2.0/src",
+		"files": [{ "include" : "js2form.js",  "exclude": null }],
+		"dependencies": null
+	},
+
+	{
+		"name":"jqModal",
+		"version":"1.1308.15",
+		"description":"",
+		"baseDir":"jqModal-1.1308.15",
+		"files": [{ "include" : "jqmodal-fixed.js",  "exclude": null }],
+		"dependencies": {
+			"jquery":"1.9.1 ~ "
+		}
+	}
+]

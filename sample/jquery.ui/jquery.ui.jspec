@@ -1,0 +1,73 @@
+[
+	{
+		"name":"jquery.ui.core",
+		"version":"1.10.4",
+		"baseDir":"{version}/development-bundle/ui",
+		"files":[ {  "include": "{name}.js" } ],
+		"dependencies":{ 
+			"jquery" : " 1.10.0 ~ 1.*.* " 
+		}
+	},
+	{
+		"name":"jquery.ui.widget",
+		"version":"1.10.4",
+		"baseDir":"{version}/development-bundle/ui",
+		"files":[ {  "include": "{name}.js" } ],
+		"dependencies":{ 
+			"jquery": " 1.10.0 ~ 1.*.* "
+		}
+	},
+	{
+		"name":"jquery.ui.position",
+		"version":"1.10.4",
+		"baseDir":"{version}/development-bundle/ui",
+		"files":[ {  "include": "{name}.js" } ],
+		"dependencies":{ 
+			"jquery" : " 1.10.0 ~ 1.*.* "
+		}
+	},
+	{
+		"name":"jquery.ui.mouse",
+		"version":"1.10.4",
+		"baseDir":"{version}/development-bundle/ui",
+		"files":[ {  "include": "{name}.js" } ],
+		"dependencies":{
+			"jquery.ui.core": " {version} ",
+			"jquery.ui.widget":" {version} "
+		}
+	},
+	{
+		"name":"jquery.ui.draggable",
+		"version":"1.10.4",
+		"baseDir":"{version}/development-bundle/ui",
+		"files":[ {  "include": "{name}.js" } ],
+		"dependencies":{
+			"jquery.ui.core": " {version} ",
+			"jquery.ui.mouse": " {version} ",
+			"jquery.ui.widget":" {version} "
+		}
+	},
+	{
+		"name":"jquery.ui.droppable",
+		"version":"1.10.4",
+		"baseDir":"{version}/development-bundle/ui",
+		"files":[ {  "include": "{name}.js" } ],
+		"dependencies":{
+			"jquery.ui.core": " {version} ",
+			"jquery.ui.mouse": " {version} ",
+			"jquery.ui.widget":" {version} ",
+			"jquery.ui.draggable":" {version} "
+		}
+	},
+	{
+		"name":"jquery.ui.resizable",
+		"version":"1.10.4",
+		"baseDir":"{version}/development-bundle/ui",
+		"files":[ {  "include": "{name}.js" } ],
+		"dependencies":{
+			"jquery.ui.core": " {version} ",
+			"jquery.ui.mouse": " {version} ",
+			"jquery.ui.widget":" {version} "
+		}
+	}
+]
