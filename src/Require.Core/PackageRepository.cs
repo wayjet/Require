@@ -208,11 +208,7 @@ namespace Require
                 Version v = pair.Key;
                 Package p = pair.Value;
 
-
-                if (ValueIsBetween(v.Major, (min==null ? null : min.Major), (max==null ? null : max.Major))
-                    && ValueIsBetween(v.Minor, (min==null ? null : min.Minor) , (max==null ? null : max.Minor))
-                    && ValueIsBetween(v.Build, (min==null ? null : min.Build), (max==null ? null : max.Build))
-                    && ValueIsBetween(v.Revision, (min==null ? null : min.Revision) , (max==null ? null : max.Revision)))
+                if (VersionGreaterThanOrEqual(v, min) && VersionLessThanOrEqual(v, max))
                 {
                     result.Add(p);
                 }
@@ -220,11 +216,121 @@ namespace Require
             return result;
         }
 
-        private bool ValueIsBetween(int value, int? min, int? max)
+        private bool VersionGreaterThanOrEqual(Version version, DependencyVersion test)
         {
-            bool ok1 = min == null ? true : value >= min.Value;
-            bool ok2 = max == null ? true : value <= max.Value;
-            return ok1 && ok2;
+            if(test==null) return true;
+
+            if (test.Major != null)
+            {
+                int compare = version.Major.CompareTo(test.Major.Value);
+                if (compare < 0)
+                {
+                    return false;
+                }
+                else if (compare > 0)
+                {
+                    return true;
+                }   
+            }
+
+            if (test.Minor != null)
+            {
+                int compare = version.Minor.CompareTo(test.Minor.Value);
+                if (compare < 0)
+                {
+                    return false;
+                }
+                else if (compare > 0)
+                {
+                    return true;
+                }
+            }
+            
+            if(test.Build!=null)
+            {
+                int compare = version.Build.CompareTo(test.Build.Value);
+                if (compare < 0)
+                {
+                    return false;
+                }
+                else if (compare > 0)
+                {
+                    return true;
+                }
+            }
+
+            if (test.Revision != null)
+            {
+                int compare = version.Revision.CompareTo(test.Revision.Value);
+                if (compare < 0)
+                {
+                    return false;
+                }
+                else if (compare > 0)
+                {
+                    return true;
+                }
+            }
+            return true;
+        }
+
+        private bool VersionLessThanOrEqual(Version version, DependencyVersion test)
+        {
+            if (test == null) return true;
+
+            if (test.Major != null)
+            {
+                int compare = version.Major.CompareTo(test.Major.Value);
+                if (compare > 0)
+                {
+                    return false;
+                }
+                else if (compare < 0)
+                {
+                    return true;
+                }
+            }
+
+            if (test.Minor != null)
+            {
+                int compare = version.Minor.CompareTo(test.Minor.Value);
+                if (compare > 0)
+                {
+                    return false;
+                }
+                else if (compare < 0)
+                {
+                    return true;
+                }
+            }
+
+            if (test.Build != null)
+            {
+                int compare = version.Build.CompareTo(test.Build.Value);
+                if (compare > 0)
+                {
+                    return false;
+                }
+                else if (compare < 0)
+                {
+                    return true;
+                }
+            }
+
+            if (test.Revision != null)
+            {
+                int compare = version.Revision.CompareTo(test.Revision.Value);
+                if (compare > 0)
+                {
+                    return false;
+                }
+                else if (compare < 0)
+                {
+                    return true;
+                }
+            }
+
+            return true;
         }
     }
 }

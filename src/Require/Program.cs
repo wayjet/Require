@@ -16,7 +16,7 @@ namespace Require
         {
             // -cmd=list -repository="D:\Wayjet\libs\js.core" -filter=jquery
             // -cmd=detail -repository="D:\Wayjet\libs\js.core" -require="jquery,jquery.ui.core"
-            // -cmd=zip -repository="D:\Wayjet\libs\js.core" -require="jquery.ui.core" -output="D:\wayjet\test.zip"
+            // -cmd=zip -repository="D:\Wayjet\libs\js.core" -require="jqModal ; jquery.ui.droppable 1.10.4" -output="D:\wayjet\test.zip"
             // -cmd=compress 未实现
 
             bool help = false;
@@ -24,7 +24,6 @@ namespace Require
             string repositoryPath = null;
             string filter = null;
             string require = null;
-            string ignore = null;
             string output = null;
 
 
@@ -33,7 +32,6 @@ namespace Require
                 {"repository=", "源代码仓库的文件夹,该文件夹必须包含jspec文件", (v)=>repositoryPath=v  },
                 {"filter=", "查看仓库中包含的包",(v)=>filter=v},
                 {"require=","需要引用的包",v=>require=v},
-                {"ignore=","需要引用的包",v=>ignore=v},
                 {"output=", "zip文件输出的位置", v=>output =v},
                 { "h|?|help",   v => help = v != null },
                 //{ "v|verbose",  v => { ++verbose } },  
@@ -121,7 +119,6 @@ namespace Require
                     }
             }
         }
-
         static void ShowHelp(OptionSet p)
         {
             Console.WriteLine("Usage: greet [OPTIONS]+ message");
