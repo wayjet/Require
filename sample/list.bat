@@ -1,2 +1,2 @@
-..\bin\require.exe -cmd=list -repository="%cd%" -filter=jquery
+..\issue\require.exe -cmd=list -repository="%cd%" -filter=jquery
 pause
